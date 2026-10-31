@@ -4,7 +4,7 @@ const en: Content = {
   meta: {
     title: "Enrique Travesí Ortega — Applied AI & ML Engineer",
     description:
-      "Software engineer with a business brain. Banking backend at BBVA, a 9.7/10 thesis on explainable AI, now going all-in on LLMs, RAG and agents. Open to junior Applied AI & ML roles.",
+      "Software engineer with a business brain. Production backend at BBVA, an end-to-end ML system graded 9.7/10, now going all-in on LLMs, RAG and agents. Open to junior Applied AI & ML roles.",
   },
   nav: {
     about: "About",
@@ -19,18 +19,18 @@ const en: Content = {
   },
   hero: {
     badge: "Open to work · Junior Applied AI / ML · Madrid",
-    titleStart: "I build AI that",
-    rotating: ["explains", "justifies", "defends"],
-    titleEnd: "its decisions.",
+    titleStart: "I turn AI into",
+    rotating: ["products", "tools", "systems"],
+    titleEnd: "people actually use.",
     subtitle:
-      "Software engineer with a business brain. I've shipped production backend for BBVA, built a neural network that explains its own trades, and I'm now going all-in on LLMs, RAG and agents.",
+      "Software engineer with a business brain. I've shipped production backend for BBVA, built an ML system end to end, from raw data to a working app, and I'm now going all-in on LLMs, RAG and agents.",
     ctaWork: "See my work",
     ctaEmail: "Email me",
     ctaCv: "Download CV",
     photoAlt: "Portrait of Enrique Travesí Ortega, arms crossed, wearing a white shirt",
-    chips: ["XAI thesis · 9.7/10", "Shipped at BBVA"],
+    chips: ["ML thesis · 9.7/10", "Shipped at BBVA"],
     stats: [
-      { value: 9.7, decimals: 1, suffix: "/10", label: "Explainable-AI thesis grade" },
+      { value: 9.7, decimals: 1, suffix: "/10", label: "Final degree project grade" },
       { value: 100, suffix: "%", label: "Pass rate of the students I taught" },
       { value: 2, label: "Degrees in parallel: CS + Business" },
       { value: 400, suffix: "+", label: "Hours of AI engineering, in progress" },
@@ -46,8 +46,8 @@ const en: Content = {
     intro: "Most juniors bring one of these. I've spent six years training all three.",
     items: [
       {
-        title: "Explainable AI",
-        body: "Accuracy isn't enough when people have to act on a prediction. I build models that can say why, and explanations people actually read.",
+        title: "Applied machine learning",
+        body: "Feature engineering, training and evaluation, and the step many teams skip: making predictions understandable to the people who act on them.",
         proof: "Thesis graded 9.7/10",
       },
       {
@@ -87,10 +87,10 @@ const en: Content = {
     ],
     facts: [
       { value: "2020 – 2026", label: "Universidad Complutense de Madrid" },
-      { value: "9.7/10", label: "Final degree project on explainable AI" },
+      { value: "9.7/10", label: "Final degree project in machine learning" },
     ],
     honoursLabel: "Matrícula de Honor",
-    honoursNote: "The highest distinction in Spanish universities, capped at 5% of each class.",
+    honoursNote: "The highest distinction for a course, awarded only to the top grade in the class.",
     honours: [
       { subject: "Fundamentals of Programming II", area: "Computer Engineering" },
       { subject: "Computer Structure", area: "Computer Engineering" },
@@ -99,7 +99,7 @@ const en: Content = {
   },
   featured: {
     kicker: "Featured project",
-    title: "When the model says sell, it has to say why.",
+    title: "From raw market data to a decision you can act on.",
     slug: "xai-financial-decision-support",
     name: "Explainable AI for Financial Decision Support",
     tagline: "An end-to-end system where a neural network recommends buy, hold or sell, and explains every single call in plain terms.",
@@ -136,10 +136,10 @@ const en: Content = {
         status: "now",
         statusLabel: "In progress",
         date: "Nov 2026",
-        name: "Why, in words",
+        name: "Ticket triage model",
         pitch:
-          "Turns any tabular model's SHAP values into a plain-language explanation with an LLM, then checks every claim against the numbers so it can't invent a reason.",
-        stack: ["SHAP", "LLM", "Evals", "FastAPI"],
+          "Fine-tunes a small language model to route support tickets, served behind an API with monitoring and a retraining loop when accuracy drifts.",
+        stack: ["Fine-tuning", "Hugging Face", "MLOps", "Docker"],
       },
       {
         status: "next",
@@ -177,7 +177,7 @@ const en: Content = {
       { id: "solutions", label: "Solutions engineer" },
     ],
     features: {
-      xai: { label: "Explainable AI thesis", evidence: "SHAP over an MLP for buy, hold, sell. Graded 9.7 out of 10." },
+      xai: { label: "ML thesis, graded 9.7", evidence: "End-to-end system: an MLP recommends buy, hold or sell, with SHAP explanations." },
       python: { label: "Python and the ML stack", evidence: "scikit-learn, SHAP, Pandas, FastAPI in a working system." },
       backend: { label: "Production backend, BBVA", evidence: "REST APIs, integration environments, releases through to production." },
       llm: { label: "LLMs, RAG and agents", evidence: "Ironhack AI Engineering, Nov 2026 to Feb 2027. In progress." },
@@ -219,7 +219,7 @@ const en: Content = {
         role: "Double Degree: Computer Engineering + Business Administration",
         org: "Universidad Complutense de Madrid",
         points: [
-          "Thesis on explainable AI for financial decisions, graded 9.7/10",
+          "Final degree project: an end-to-end ML system for financial decisions, graded 9.7/10",
           "Matrícula de Honor in Fundamentals of Programming II, Computer Structure, and Asset Valuation and Investment Analysis",
         ],
       },
@@ -253,7 +253,7 @@ const en: Content = {
     kicker: "Toolbox",
     title: "What I work with.",
     groups: [
-      { name: "AI & data", items: ["Python", "SHAP", "scikit-learn", "Pandas", "NumPy", "Matplotlib", "Jupyter", "Explainable AI"] },
+      { name: "AI & data", items: ["Python", "SHAP", "scikit-learn", "Pandas", "NumPy", "Matplotlib", "Jupyter", "Model evaluation"] },
       { name: "Levelling up", items: ["LLMs", "RAG", "AI agents", "Deep learning", "NLP", "MLOps"] },
       { name: "Backend", items: ["FastAPI", "Flask", "REST APIs", "SQL", "MySQL", "Supabase", "Debugging"] },
       { name: "Languages & tools", items: ["C", "C++", "Java", "TypeScript", "Next.js", "Git", "Linux", "Testing"] },
@@ -261,7 +261,7 @@ const en: Content = {
   },
   contact: {
     kicker: "Contact",
-    title: "Let's build AI people can trust.",
+    title: "Let's build something people actually use.",
     body: "I'm looking for my next junior Applied AI, ML or AI engineering role. If your team ships models people rely on, I'd love to talk.",
     copy: "Copy email",
     copied: "Copied!",

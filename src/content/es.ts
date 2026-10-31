@@ -4,7 +4,7 @@ const es: Content = {
   meta: {
     title: "Enrique Travesí Ortega — Ingeniero de IA aplicada y ML",
     description:
-      "Ingeniero de software con cabeza de negocio. Backend bancario en BBVA, TFG de IA explicable con un 9,7 y ahora a fondo con LLMs, RAG y agentes. Abierto a puestos junior de IA aplicada y ML.",
+      "Ingeniero de software con cabeza de negocio. Backend en producción en BBVA, un sistema de ML completo calificado con un 9,7 y ahora a fondo con LLMs, RAG y agentes. Abierto a puestos junior de IA aplicada y ML.",
   },
   nav: {
     about: "Sobre mí",
@@ -19,18 +19,18 @@ const es: Content = {
   },
   hero: {
     badge: "Disponible · Junior IA aplicada / ML · Madrid",
-    titleStart: "Construyo IA que",
-    rotating: ["explica", "justifica", "defiende"],
-    titleEnd: "sus decisiones.",
+    titleStart: "Convierto la IA en",
+    rotating: ["productos", "herramientas", "sistemas"],
+    titleEnd: "que la gente usa.",
     subtitle:
-      "Ingeniero de software con cabeza de negocio. He desarrollado backend en producción para BBVA, he construido una red neuronal que explica sus propias operaciones y ahora voy a por todas con LLMs, RAG y agentes.",
+      "Ingeniero de software con cabeza de negocio. He desarrollado backend en producción para BBVA, he construido un sistema de ML de principio a fin, de los datos en bruto a una aplicación que funciona, y ahora voy a por todas con LLMs, RAG y agentes.",
     ctaWork: "Ver proyectos",
     ctaEmail: "Escríbeme",
     ctaCv: "Descargar CV",
     photoAlt: "Retrato de Enrique Travesí Ortega, de brazos cruzados y con camisa blanca",
-    chips: ["TFG de XAI · 9,7/10", "Backend en BBVA"],
+    chips: ["TFG de ML · 9,7/10", "Backend en BBVA"],
     stats: [
-      { value: 9.7, decimals: 1, suffix: "/10", label: "Nota del TFG de IA explicable" },
+      { value: 9.7, decimals: 1, suffix: "/10", label: "Nota del trabajo de fin de grado" },
       { value: 100, suffix: "%", label: "Aprobados entre mis alumnos" },
       { value: 2, label: "Grados a la vez: Informática + ADE" },
       { value: 400, suffix: "+", label: "Horas de AI Engineering, en curso" },
@@ -46,8 +46,8 @@ const es: Content = {
     intro: "La mayoría de juniors trae una de las tres. Yo llevo seis años entrenando las tres.",
     items: [
       {
-        title: "IA explicable",
-        body: "La precisión no basta cuando alguien tiene que actuar según una predicción. Construyo modelos que dicen por qué, con explicaciones que la gente lee de verdad.",
+        title: "Machine learning aplicado",
+        body: "Ingeniería de variables, entrenamiento y evaluación, y el paso que muchos equipos se saltan: que quien actúa según una predicción la entienda.",
         proof: "TFG calificado con un 9,7",
       },
       {
@@ -87,10 +87,10 @@ const es: Content = {
     ],
     facts: [
       { value: "2020 – 2026", label: "Universidad Complutense de Madrid" },
-      { value: "9,7/10", label: "TFG de IA explicable" },
+      { value: "9,7/10", label: "TFG de machine learning" },
     ],
     honoursLabel: "Matrículas de Honor",
-    honoursNote: "La máxima distinción universitaria en España, limitada al 5 % de cada grupo.",
+    honoursNote: "La máxima distinción en una asignatura: solo se concede a la nota más alta de la clase.",
     honours: [
       { subject: "Fundamentos de la Programación II", area: "Ingeniería Informática" },
       { subject: "Estructura de Computadores", area: "Ingeniería Informática" },
@@ -99,7 +99,7 @@ const es: Content = {
   },
   featured: {
     kicker: "Proyecto destacado",
-    title: "Si el modelo dice vende, tiene que decir por qué.",
+    title: "De datos de mercado en bruto a una decisión accionable.",
     slug: "xai-financial-decision-support",
     name: "IA explicable para decisiones financieras",
     tagline: "Un sistema completo en el que una red neuronal recomienda comprar, mantener o vender, y explica cada decisión en términos claros.",
@@ -136,10 +136,10 @@ const es: Content = {
         status: "now",
         statusLabel: "En curso",
         date: "nov 2026",
-        name: "El porqué, en palabras",
+        name: "Clasificador de incidencias",
         pitch:
-          "Convierte los valores SHAP de cualquier modelo tabular en una explicación clara escrita por un LLM y contrasta cada afirmación con los números para que no pueda inventar motivos.",
-        stack: ["SHAP", "LLM", "Evals", "FastAPI"],
+          "Ajusta un modelo de lenguaje pequeño para enrutar incidencias de soporte, servido tras una API con monitorización y reentrenamiento cuando baja la precisión.",
+        stack: ["Fine-tuning", "Hugging Face", "MLOps", "Docker"],
       },
       {
         status: "next",
@@ -177,7 +177,7 @@ const es: Content = {
       { id: "solutions", label: "Ingeniero de soluciones" },
     ],
     features: {
-      xai: { label: "TFG de IA explicable", evidence: "SHAP sobre un MLP de comprar, mantener, vender. Nota: 9,7 sobre 10." },
+      xai: { label: "TFG de ML, con un 9,7", evidence: "Sistema completo: un MLP recomienda comprar, mantener o vender, con explicaciones SHAP." },
       python: { label: "Python y el stack de ML", evidence: "scikit-learn, SHAP, Pandas y FastAPI en un sistema que funciona." },
       backend: { label: "Backend en producción, BBVA", evidence: "APIs REST, entornos de integración, despliegues hasta producción." },
       llm: { label: "LLMs, RAG y agentes", evidence: "AI Engineering en Ironhack, nov 2026 a feb 2027. En curso." },
@@ -219,7 +219,7 @@ const es: Content = {
         role: "Doble grado: Ingeniería Informática + ADE",
         org: "Universidad Complutense de Madrid",
         points: [
-          "TFG de IA explicable para decisiones financieras, calificado con un 9,7",
+          "TFG: un sistema de ML completo para decisiones financieras, calificado con un 9,7",
           "Matrículas de Honor en Fundamentos de la Programación II, Estructura de Computadores y Valoración de Activos y Análisis de Inversiones",
         ],
       },
@@ -253,7 +253,7 @@ const es: Content = {
     kicker: "Herramientas",
     title: "Con qué trabajo.",
     groups: [
-      { name: "IA y datos", items: ["Python", "SHAP", "scikit-learn", "Pandas", "NumPy", "Matplotlib", "Jupyter", "IA explicable"] },
+      { name: "IA y datos", items: ["Python", "SHAP", "scikit-learn", "Pandas", "NumPy", "Matplotlib", "Jupyter", "Evaluación de modelos"] },
       { name: "Subiendo de nivel", items: ["LLMs", "RAG", "Agentes de IA", "Deep learning", "NLP", "MLOps"] },
       { name: "Backend", items: ["FastAPI", "Flask", "APIs REST", "SQL", "MySQL", "Supabase", "Depuración"] },
       { name: "Lenguajes y herramientas", items: ["C", "C++", "Java", "TypeScript", "Next.js", "Git", "Linux", "Testing"] },
@@ -261,7 +261,7 @@ const es: Content = {
   },
   contact: {
     kicker: "Contacto",
-    title: "Construyamos IA en la que se pueda confiar.",
+    title: "Construyamos algo que la gente use de verdad.",
     body: "Busco mi próximo puesto junior de IA aplicada, ML o AI engineering. Si tu equipo entrega modelos de los que la gente depende, me encantaría hablar.",
     copy: "Copiar email",
     copied: "¡Copiado!",
