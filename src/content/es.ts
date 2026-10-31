@@ -19,9 +19,9 @@ const es: Content = {
   },
   hero: {
     badge: "Disponible · Junior IA aplicada / ML · Madrid",
-    titleStart: "Convierto la IA en",
-    rotating: ["productos", "herramientas", "sistemas"],
-    titleEnd: "que la gente usa.",
+    titleStart: "Sistemas de IA",
+    rotating: ["fiables", "robustos", "medibles"],
+    titleEnd: "que dan resultados.",
     subtitle:
       "Ingeniero de software con cabeza de negocio. He desarrollado backend en producción para BBVA, he construido un sistema de ML de principio a fin, de los datos en bruto a una aplicación que funciona, y ahora voy a por todas con LLMs, RAG y agentes.",
     ctaWork: "Ver proyectos",
@@ -261,7 +261,7 @@ const es: Content = {
   },
   contact: {
     kicker: "Contacto",
-    title: "Construyamos algo que la gente use de verdad.",
+    title: "Construyamos algo que aguante en producción.",
     body: "Busco mi próximo puesto junior de IA aplicada, ML o AI engineering. Si tu equipo entrega modelos de los que la gente depende, me encantaría hablar.",
     copy: "Copiar email",
     copied: "¡Copiado!",

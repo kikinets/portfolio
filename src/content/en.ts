@@ -19,9 +19,9 @@ const en: Content = {
   },
   hero: {
     badge: "Open to work · Junior Applied AI / ML · Madrid",
-    titleStart: "I turn AI into",
-    rotating: ["products", "tools", "systems"],
-    titleEnd: "people actually use.",
+    titleStart: "Reliable AI",
+    rotating: ["systems", "products", "models"],
+    titleEnd: "that deliver results.",
     subtitle:
       "Software engineer with a business brain. I've shipped production backend for BBVA, built an ML system end to end, from raw data to a working app, and I'm now going all-in on LLMs, RAG and agents.",
     ctaWork: "See my work",
@@ -261,7 +261,7 @@ const en: Content = {
   },
   contact: {
     kicker: "Contact",
-    title: "Let's build something people actually use.",
+    title: "Let's build something that holds up in production.",
     body: "I'm looking for my next junior Applied AI, ML or AI engineering role. If your team ships models people rely on, I'd love to talk.",
     copy: "Copy email",
     copied: "Copied!",
