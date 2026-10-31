@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
@@ -9,6 +9,7 @@ import "../globals.css";
 
 const sans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const mono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const serif = Instrument_Serif({ variable: "--font-instrument-serif", subsets: ["latin"], weight: "400", style: ["normal", "italic"] });
 
 // Runs before paint so a saved light theme never flashes dark.
 const bootScript = `try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}`;
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export const viewport: Viewport = { themeColor: "#07090f" };
+export const viewport: Viewport = { themeColor: "#0e0d0b" };
 
 export default async function LocaleLayout({
   children,
@@ -68,7 +69,7 @@ export default async function LocaleLayout({
   };
 
   return (
-    <html lang={locale} className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang={locale} className={`${sans.variable} ${mono.variable} ${serif.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: bootScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }} />

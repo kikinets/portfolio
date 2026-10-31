@@ -43,21 +43,18 @@ export default function Nav({ locale, nav, home = true }: Props) {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || open ? "border-b border-line bg-bg/75 backdrop-blur-xl" : "border-b border-transparent"
+        scrolled || open ? "border-b border-line bg-bg" : "border-b border-transparent"
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8" aria-label="Main">
-        <Link href="/" className="group flex items-center gap-2.5 font-semibold tracking-tight" onClick={() => setOpen(false)}>
-          <span className="grid size-8 place-items-center rounded-lg bg-gradient-to-br from-cyan to-violet font-mono text-xs font-bold text-[#07090f] transition-transform duration-300 group-hover:rotate-6">
-            ET
-          </span>
-          <span className="hidden sm:inline">Enrique Travesí</span>
+        <Link href="/" className="font-serif text-2xl leading-none" onClick={() => setOpen(false)}>
+          Enrique Travesí<span className="text-accent">.</span>
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="rounded-full px-3.5 py-2 text-sm text-muted transition-colors hover:bg-surface-2 hover:text-fg">
+              <a href={l.href} className="link-draw mx-3 py-1 text-sm text-muted transition-colors hover:text-fg">
                 {l.label}
               </a>
             </li>
@@ -94,7 +91,7 @@ export default function Nav({ locale, nav, home = true }: Props) {
           </button>
           <a
             href={`${prefix}#contact`}
-            className="ml-1 hidden h-9 items-center rounded-full bg-fg px-4 text-sm font-medium text-bg transition hover:opacity-85 active:scale-[0.97] sm:inline-flex"
+            className="ml-1 hidden h-9 items-center rounded-full border border-line-strong px-4 text-sm font-medium transition hover:border-accent hover:text-accent active:scale-[0.97] sm:inline-flex"
           >
             {nav.cta}
           </a>
@@ -126,7 +123,7 @@ export default function Nav({ locale, nav, home = true }: Props) {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.05 * i }}
               >
-                <a href={l.href} onClick={() => setOpen(false)} className="block border-b border-line py-4 text-lg font-medium">
+                <a href={l.href} onClick={() => setOpen(false)} className="block border-b border-line py-4 font-serif text-3xl">
                   {l.label}
                 </a>
               </motion.li>

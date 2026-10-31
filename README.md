@@ -18,7 +18,7 @@ npm run lint
 | All page copy, Spanish | `src/content/es.ts` |
 | "Why hire me, explained" weights | `src/content/weights.ts` |
 | Case study text | `src/content/projects/{en,es}/<slug>.mdx` |
-| Portrait (hero and social card) | `public/images/enrique.webp`, `public/images/enrique.png` |
+| Portrait (hero and social card) | `public/images/portrait.webp`, `public/images/enrique.png` |
 | Page sections and UI pieces | `src/components/sections/*`, `src/components/ui/*` |
 | Styles and colour tokens (light and dark) | `src/app/globals.css` |
 
@@ -41,4 +41,4 @@ npm run lint
 
 ## Portrait
 
-The portrait is a retouched cut-out of the original photo (background replaced, light and colour corrected, hair outline tidied). To change it, replace the two files in `public/images/` keeping the same names: `enrique.webp` at 1200×1500 and `enrique.png` with a transparent background.
+The portrait is a retouched cut-out of the original photo (background replaced, light and colour corrected, hair outline tidied). To change it, replace the two files in `public/images/` keeping the same names: `portrait.webp` at 1200×1500 and `enrique.png` with a transparent background.

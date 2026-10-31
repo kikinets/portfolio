@@ -9,39 +9,35 @@ export default function ShapMockup({ mockup }: { mockup: Content["featured"]["mo
   const max = Math.max(...mockup.rows.map((r) => Math.abs(r.value)));
 
   return (
-    <div className="rounded-2xl border border-line bg-bg/80 p-5 shadow-2xl backdrop-blur sm:p-6">
-      <div className="flex items-center justify-between border-b border-line pb-4">
-        <div className="flex gap-1.5" aria-hidden>
-          <span className="size-2.5 rounded-full bg-red-400/70" />
-          <span className="size-2.5 rounded-full bg-amber-400/70" />
-          <span className="size-2.5 rounded-full bg-emerald-400/70" />
-        </div>
-        <span className="font-mono text-xs text-muted">{mockup.title}</span>
+    <div className="border border-line bg-bg p-5 sm:p-7">
+      <div className="flex items-baseline justify-between border-b border-line pb-4">
+        <span className="font-mono text-xs text-muted uppercase">{mockup.title}</span>
+        <span className="font-mono text-xs text-muted">{mockup.note}</span>
       </div>
-      <div className="mt-5 flex items-baseline justify-between">
+      <div className="mt-6 flex items-baseline justify-between">
         <span className="text-sm text-muted">{mockup.label}</span>
         <motion.span
-          initial={reduce ? false : { scale: 0.6, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
+          initial={reduce ? false : { opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ type: "spring", stiffness: 260, damping: 18, delay: 0.2 }}
-          className="rounded-md bg-amber/15 px-2.5 py-1 font-mono text-sm font-bold text-amber"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="font-serif text-4xl text-accent"
         >
           {mockup.recommendation}
         </motion.span>
       </div>
-      <ul className="mt-5 space-y-3">
+      <ul className="mt-6 space-y-3.5">
         {mockup.rows.map((r, i) => {
           const width = (Math.abs(r.value) / max) * 50;
           const pos = r.value > 0;
           return (
-            <li key={r.label} className="grid grid-cols-[minmax(0,9rem)_1fr_3rem] items-center gap-3 text-xs sm:text-sm">
+            <li key={r.label} className="grid grid-cols-[minmax(0,9.5rem)_1fr_3rem] items-center gap-3 text-xs sm:text-sm">
               <span className="truncate text-muted">{r.label}</span>
-              <span className="relative h-5">
-                <span aria-hidden className="absolute top-[-4px] bottom-[-4px] left-1/2 w-px bg-line-strong" />
+              <span className="relative h-3">
+                <span aria-hidden className="absolute -top-1.5 -bottom-1.5 left-1/2 w-px bg-line-strong" />
                 <motion.span
                   aria-hidden
-                  className={`absolute top-0 h-full rounded ${pos ? "left-1/2 origin-left bg-gradient-to-r from-cyan to-violet" : "right-1/2 origin-right bg-amber"}`}
+                  className={`absolute top-0 h-full ${pos ? "left-1/2 origin-left bg-accent" : "right-1/2 origin-right bg-neg"}`}
                   style={{ width: `${width}%` }}
                   initial={reduce ? false : { scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
@@ -49,7 +45,7 @@ export default function ShapMockup({ mockup }: { mockup: Content["featured"]["mo
                   transition={{ duration: 0.9, delay: 0.3 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 />
               </span>
-              <span className={`text-right font-mono tabular-nums ${pos ? "text-cyan" : "text-amber"}`}>
+              <span className="text-right font-mono tabular-nums">
                 {pos ? "+" : "−"}
                 {Math.abs(r.value).toFixed(2)}
               </span>
@@ -57,7 +53,6 @@ export default function ShapMockup({ mockup }: { mockup: Content["featured"]["mo
           );
         })}
       </ul>
-      <p className="mt-5 text-right font-mono text-[11px] text-muted">{mockup.note}</p>
     </div>
   );
 }

@@ -53,19 +53,17 @@ export default async function CaseStudy({ params }: Params) {
       <ScrollProgress />
       <Nav locale={found.locale} nav={c.nav} home={false} />
       <main>
-        <header className="relative overflow-hidden pt-32 pb-16 sm:pt-40">
-          <div aria-hidden className="bg-grid absolute inset-0 opacity-60" />
-          <div aria-hidden className="absolute -top-40 left-1/3 h-[420px] w-[720px] rounded-full bg-violet/20 blur-[120px]" />
+        <header className="relative pt-32 pb-16 sm:pt-40">
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr]">
             <Reveal>
-              <Link href="/#work" className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-cyan">
+              <Link href="/#work" className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent">
                 <ArrowLeft className="size-4" /> {c.caseStudy.back}
               </Link>
-              <h1 className="mt-6 text-4xl font-semibold tracking-[-0.035em] sm:text-6xl sm:leading-[1.03]">{featured.name}</h1>
+              <h1 className="mt-6 font-serif text-5xl leading-[1] sm:text-7xl">{featured.name}</h1>
               <p className="mt-5 max-w-xl text-lg text-muted">{featured.tagline}</p>
               <a
                 href={`mailto:${site.email}`}
-                className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-gradient-to-r from-cyan to-violet px-6 text-sm font-semibold text-[#07090f] transition active:scale-[0.97]"
+                className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 text-sm font-semibold text-accent-ink transition hover:brightness-110 active:scale-[0.97]"
               >
                 <Mail className="size-4" /> {c.caseStudy.cta}
               </a>
@@ -74,11 +72,11 @@ export default async function CaseStudy({ params }: Params) {
               <ShapMockup mockup={featured.mockup} />
             </Reveal>
           </div>
-          <dl className="relative mx-auto mt-16 grid max-w-6xl gap-4 px-5 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
+          <dl className="relative mx-auto mt-16 grid max-w-6xl gap-x-8 px-5 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
             {c.caseStudy.facts.map((f, i) => (
               <Reveal key={f.label} delay={i * 0.06}>
-                <div className="h-full rounded-2xl border border-line bg-surface p-5">
-                  <dt className="font-mono text-xs text-cyan uppercase">{f.label}</dt>
+                <div className="h-full border-t border-line pt-4 pb-6">
+                  <dt className="font-mono text-xs text-muted uppercase">{f.label}</dt>
                   <dd className="mt-2 text-sm leading-relaxed">{f.value}</dd>
                 </div>
               </Reveal>

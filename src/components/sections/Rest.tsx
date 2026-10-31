@@ -1,5 +1,4 @@
-import { BriefcaseBusiness, Download, GraduationCap, MapPin, Languages, Presentation } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
+import { ArrowUpRight } from "lucide-react";
 import type { Content } from "@/content/types";
 import { site } from "@/content/site";
 import Explainer from "@/components/Explainer";
@@ -12,13 +11,11 @@ import SectionHeading from "./SectionHeading";
 export function WhyMe({ explain, locale }: { explain: Content["explain"]; locale: string }) {
   return (
     <section className="mx-auto max-w-6xl px-5 pb-24 sm:px-8 sm:pb-32" aria-labelledby="why-title">
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-        <div className="lg:sticky lg:top-28">
-          <SectionHeading id="why-title" kicker={explain.kicker} title={explain.heading} intro={explain.intro} />
-          <Reveal delay={0.1}>
-            <p className="mt-6 rounded-xl border border-line bg-surface/60 p-4 text-sm text-muted">{explain.note}</p>
-          </Reveal>
-        </div>
+      <SectionHeading id="why-title" kicker={explain.kicker} title={explain.heading} intro={explain.intro} />
+      <div className="mt-14 grid gap-10 lg:grid-cols-[14rem_1fr]">
+        <Reveal>
+          <p className="text-sm leading-relaxed text-muted">{explain.note}</p>
+        </Reveal>
         <Reveal delay={0.1}>
           <Explainer copy={explain} locale={locale} />
         </Reveal>
@@ -27,43 +24,36 @@ export function WhyMe({ explain, locale }: { explain: Content["explain"]; locale
   );
 }
 
-const kindIcon = { work: BriefcaseBusiness, study: GraduationCap, teaching: Presentation };
-
 export function Journey({ journey }: { journey: Content["journey"] }) {
   return (
     <section id="journey" className="mx-auto max-w-6xl px-5 pb-24 sm:px-8 sm:pb-32" aria-labelledby="journey-title">
       <SectionHeading id="journey-title" kicker={journey.kicker} title={journey.title} />
       <div className="relative mt-14">
         <TimelineLine />
-        <ol className="space-y-6">
-          {journey.items.map((item) => {
-            const Icon = kindIcon[item.kind];
-            return (
-              <Reveal key={item.role + item.period} as="li" delay={0.05} className="relative pl-14 sm:pl-20">
-                <span className="absolute top-6 left-0 grid size-10 place-items-center rounded-full border border-line-strong bg-bg text-cyan sm:left-2">
-                  <Icon className="size-4" />
-                </span>
-                <div className="rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-line-strong sm:p-7">
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <p className="font-mono text-xs text-muted">{item.period}</p>
-                    {item.tag && (
-                      <span className="rounded-full bg-emerald-400/10 px-2 py-0.5 text-xs font-medium text-emerald-400">{item.tag}</span>
-                    )}
-                  </div>
-                  <h3 className="mt-2 text-xl font-semibold tracking-tight">{item.role}</h3>
-                  <p className="text-cyan">{item.org}</p>
-                  <ul className="mt-4 space-y-2 text-muted">
+        <ol>
+          {journey.items.map((item) => (
+            <Reveal key={item.role + item.period} as="li" className="relative pb-12 pl-12 last:pb-0 sm:pl-16">
+              <span aria-hidden className="absolute top-2 left-[15px] size-3 rounded-full border-2 border-accent bg-bg sm:left-[23px]" />
+              <div className="grid gap-3 lg:grid-cols-[12rem_1fr] lg:gap-10">
+                <div>
+                  <p className="font-mono text-xs text-muted uppercase">{item.period}</p>
+                  {item.tag && <p className="mt-1 text-sm text-accent">{item.tag}</p>}
+                </div>
+                <div>
+                  <h3 className="font-serif text-3xl leading-tight">{item.role}</h3>
+                  <p className="mt-1 text-muted">{item.org}</p>
+                  <ul className="mt-4 max-w-2xl space-y-2">
                     {item.points.map((p) => (
                       <li key={p} className="flex gap-3 leading-relaxed">
-                        <span aria-hidden className="mt-2.5 size-1.5 shrink-0 rounded-full bg-violet" />
+                        <span aria-hidden className="mt-[0.7em] h-px w-3 shrink-0 bg-accent" />
                         <span>{p}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-              </Reveal>
-            );
-          })}
+              </div>
+            </Reveal>
+          ))}
         </ol>
       </div>
     </section>
@@ -72,36 +62,30 @@ export function Journey({ journey }: { journey: Content["journey"] }) {
 
 export function Stack({ stack }: { stack: Content["stack"] }) {
   const all = stack.groups.flatMap((g) => g.items);
-  const half = Math.ceil(all.length / 2);
   return (
     <section className="pb-24 sm:pb-32" aria-labelledby="stack-title">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading id="stack-title" kicker={stack.kicker} title={stack.title} />
       </div>
-      <div className="mt-12 space-y-4">
-        {[all.slice(0, half), all.slice(half)].map((row, i) => (
-          <Marquee key={i} label={stack.title} duration={45} reverse={i === 1}>
-            {row.map((s) => (
-              <span key={s} className="mx-2 rounded-full border border-line bg-surface px-5 py-2.5 text-sm font-medium whitespace-nowrap">
-                {s}
-              </span>
-            ))}
-          </Marquee>
-        ))}
+      <div className="mt-12 border-y border-line py-6">
+        <Marquee label={stack.title} duration={60}>
+          {all.map((s) => (
+            <span key={s} className="flex items-center font-serif text-4xl whitespace-nowrap italic sm:text-5xl">
+              <span className="px-6">{s}</span>
+              <span aria-hidden className="text-accent not-italic">·</span>
+            </span>
+          ))}
+        </Marquee>
       </div>
-      <div className="mx-auto mt-14 grid max-w-6xl gap-4 px-5 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
+      <div className="mx-auto mt-12 grid max-w-6xl gap-10 px-5 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
         {stack.groups.map((g, i) => (
           <Reveal key={g.name} delay={i * 0.06}>
-            <div className="h-full rounded-2xl border border-line bg-surface p-6">
-              <h3 className="font-semibold">{g.name}</h3>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {g.items.map((s) => (
-                  <li key={s} className="rounded-md bg-surface-2 px-2.5 py-1 font-mono text-xs text-muted">
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <h3 className="border-b border-line pb-3 text-sm text-muted">{g.name}</h3>
+            <ul className="mt-4 space-y-1.5">
+              {g.items.map((s) => (
+                <li key={s}>{s}</li>
+              ))}
+            </ul>
           </Reveal>
         ))}
       </div>
@@ -109,65 +93,52 @@ export function Stack({ stack }: { stack: Content["stack"] }) {
   );
 }
 
+function OutLink({ href, children, download }: { href: string; children: string; download?: boolean }) {
+  const external = href.startsWith("http");
+  return (
+    <a
+      href={href}
+      download={download}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="group inline-flex items-center gap-1 font-medium"
+    >
+      <span className="link-draw">{children}</span>
+      <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+    </a>
+  );
+}
+
 export function Contact({ contact }: { contact: Content["contact"] }) {
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-5 pb-16 sm:px-8" aria-labelledby="contact-title">
-      <Reveal>
-        <div className="relative overflow-hidden rounded-3xl border border-line bg-surface px-6 py-16 text-center sm:px-12 sm:py-24">
-          <div aria-hidden className="bg-grid absolute inset-0 opacity-50" />
-          <div aria-hidden className="absolute -bottom-32 left-1/2 h-72 w-[680px] -translate-x-1/2 rounded-full bg-violet/25 blur-[100px]" />
-          <div className="relative">
-            <p className="font-mono text-xs font-medium tracking-wider text-cyan uppercase">{contact.kicker}</p>
-            <h2 id="contact-title" className="mx-auto mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.035em] sm:text-6xl">
-              {contact.title}
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-muted">{contact.body}</p>
-            <a
-              href={`mailto:${site.email}`}
-              className="text-gradient mt-10 inline-block text-xl font-semibold break-all sm:text-3xl"
-            >
+    <section id="contact" className="mx-auto max-w-6xl px-5 pb-20 sm:px-8" aria-labelledby="contact-title">
+      <Reveal className="border-t border-line pt-6">
+        <p className="text-sm text-muted">{contact.kicker}</p>
+        <h2 id="contact-title" className="mt-10 max-w-5xl font-serif text-5xl leading-[0.98] sm:text-8xl">
+          {contact.title}
+        </h2>
+        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <p className="max-w-xl text-lg text-muted">{contact.body}</p>
+            <a href={`mailto:${site.email}`} className="link-draw mt-8 inline-block font-serif text-3xl break-all text-accent sm:text-5xl">
               {site.email}
             </a>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <CopyEmail email={site.email} copyLabel={contact.copy} copiedLabel={contact.copied} />
-              <a
-                href={site.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center gap-2 rounded-full border border-line-strong px-5 text-sm font-medium transition hover:border-cyan hover:text-cyan active:scale-[0.97]"
-              >
-                <LinkedinIcon className="size-4" /> LinkedIn
-              </a>
-              {site.github && (
-                <a
-                  href={site.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center gap-2 rounded-full border border-line-strong px-5 text-sm font-medium transition hover:border-cyan hover:text-cyan active:scale-[0.97]"
-                >
-                  <GithubIcon className="size-4" /> GitHub
-                </a>
-              )}
-              {site.cvAvailable && (
-                <a
-                  href={site.cvPath}
-                  download
-                  className="inline-flex h-12 items-center gap-2 rounded-full border border-line-strong px-5 text-sm font-medium transition hover:border-cyan hover:text-cyan active:scale-[0.97]"
-                >
-                  <Download className="size-4" /> CV
-                </a>
-              )}
-            </div>
-            <p className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted">
-              <span className="inline-flex items-center gap-1.5">
-                <MapPin className="size-4" /> {contact.location}
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <Languages className="size-4" /> {contact.languages}
-              </span>
-            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-7 gap-y-4">
+            <CopyEmail email={site.email} copyLabel={contact.copy} copiedLabel={contact.copied} />
+            <OutLink href={site.linkedin}>LinkedIn</OutLink>
+            {site.github && <OutLink href={site.github}>GitHub</OutLink>}
+            {site.cvAvailable && (
+              <OutLink href={site.cvPath} download>
+                CV
+              </OutLink>
+            )}
           </div>
         </div>
+        <p className="mt-14 flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-muted uppercase">
+          <span>{contact.location}</span>
+          <span>{contact.languages}</span>
+        </p>
       </Reveal>
     </section>
   );
@@ -175,7 +146,7 @@ export function Contact({ contact }: { contact: Content["contact"] }) {
 
 export function Footer({ footer }: { footer: Content["footer"] }) {
   return (
-    <footer className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-5 py-10 text-sm text-muted sm:flex-row sm:px-8">
+    <footer className="mx-auto flex max-w-6xl flex-col justify-between gap-2 border-t border-line px-5 py-8 text-sm text-muted sm:flex-row sm:px-8">
       <p>{footer.rights}</p>
       <p>{footer.line}</p>
     </footer>

@@ -4,12 +4,14 @@ type Props = { kicker: string; title: string; intro?: string; id?: string };
 
 export default function SectionHeading({ kicker, title, intro, id }: Props) {
   return (
-    <Reveal className="max-w-2xl">
-      <p className="font-mono text-xs font-medium tracking-wider text-cyan uppercase">{kicker}</p>
-      <h2 id={id} className="mt-3 text-3xl font-semibold tracking-[-0.03em] sm:text-5xl sm:leading-[1.05]">
-        {title}
-      </h2>
-      {intro && <p className="mt-4 text-lg text-muted">{intro}</p>}
+    <Reveal className="grid gap-6 border-t border-line pt-6 lg:grid-cols-[14rem_1fr]">
+      <p className="text-sm text-muted">{kicker}</p>
+      <div className="max-w-3xl">
+        <h2 id={id} className="font-serif text-4xl leading-[1.02] sm:text-6xl">
+          {title}
+        </h2>
+        {intro && <p className="mt-5 max-w-xl text-lg text-muted">{intro}</p>}
+      </div>
     </Reveal>
   );
 }

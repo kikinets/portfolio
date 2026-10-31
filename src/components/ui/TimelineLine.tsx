@@ -10,7 +10,7 @@ export default function TimelineLine() {
   const scaleY = useSpring(scrollYProgress, { stiffness: 90, damping: 25 });
   return (
     <div ref={ref} aria-hidden className="absolute top-0 bottom-0 left-5 w-px bg-line sm:left-7">
-      <motion.div className="h-full w-full origin-top bg-gradient-to-b from-cyan via-violet to-transparent" style={{ scaleY }} />
+      <motion.div className="h-full w-full origin-top bg-accent" style={{ scaleY }} />
     </div>
   );
 }

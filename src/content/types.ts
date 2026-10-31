@@ -1,4 +1,4 @@
-export type RoleId = "applied-ai" | "ml" | "finance" | "solutions";
+export type RoleId = "applied-ai" | "ml" | "product" | "solutions";
 
 export type FeatureId =
   | "xai"
@@ -7,10 +7,8 @@ export type FeatureId =
   | "llm"
   | "business"
   | "teaching"
-  | "audit"
+  | "fullstack"
   | "experience";
-
-export type IconName = "sparkles" | "server" | "briefcase" | "messages" | "bot" | "shield";
 
 export type Stat = { value: number; decimals?: number; prefix?: string; suffix?: string; label: string };
 
@@ -47,7 +45,7 @@ export type Content = {
     kicker: string;
     title: string;
     intro: string;
-    items: { icon: IconName; title: string; body: string; proof: string }[];
+    items: { title: string; body: string; proof: string }[];
   };
   featured: {
     kicker: string;

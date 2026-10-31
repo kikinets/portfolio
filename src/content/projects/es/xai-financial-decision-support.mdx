@@ -4,16 +4,16 @@ import ArchitectureDiagram from "@/components/ArchitectureDiagram";
 
 Un modelo que dice "vende" sirve de poco a quien tiene que decidir. Necesita saber qué lo empujó ahí y si esa razón tiene sentido. Nuestro trabajo de fin de grado en la Complutense era un sistema de apoyo a la decisión para inversores: un clasificador MLP recomienda comprar, mantener o vender, y cada recomendación llega con sus motivos.
 
-El equipo construyó juntos los datos, el modelo y la interfaz. Mi parte fue la capa de explicabilidad, además de la primera versión de la capa de datos en Supabase y parte de la arquitectura y la integración del modelo.
+Lo construimos en un equipo pequeño y trabajé en todas sus capas: la capa de datos en Supabase, las variables y el clasificador MLP, la API en FastAPI y la interfaz en Next.js. Además lideré la capa de explicabilidad, que es lo que hace que el sistema merezca confianza y en lo que este caso de estudio profundiza.
 
-## Lo que construí
+## La capa de explicabilidad
 
 `MLPShapExplainer`, un componente en Python que toma una predicción del clasificador y devuelve la contribución de cada variable de entrada usando SHAP. Vive dentro del flujo de predicción, así que el frontend recibe la recomendación y su explicación en la misma respuesta y puede dibujarlas juntas.
 
 <ArchitectureDiagram
   labels={{
     nodes: ["Datos de mercado", "Supabase", "Clasificador MLP", "Explicador SHAP", "FastAPI", "Next.js"],
-    mine: "mi parte",
+    mine: "lo lideré",
     caption: "El sistema, de los datos a la pantalla. La explicación viaja con cada predicción.",
   }}
 />

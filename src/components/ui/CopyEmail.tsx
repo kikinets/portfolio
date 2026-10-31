@@ -23,7 +23,7 @@ export default function CopyEmail({ email, copyLabel, copiedLabel }: Props) {
     <button
       type="button"
       onClick={copy}
-      className="inline-flex h-12 items-center gap-2 rounded-full border border-line-strong px-5 text-sm font-medium transition hover:border-cyan hover:text-cyan active:scale-[0.97]"
+      className="inline-flex h-12 items-center gap-2 rounded-full border border-line-strong px-5 text-sm font-medium transition hover:border-accent hover:text-accent active:scale-[0.97]"
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span

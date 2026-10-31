@@ -4,16 +4,16 @@ import ArchitectureDiagram from "@/components/ArchitectureDiagram";
 
 A model that says "sell" is not much use to the person who has to decide. They need to know what pushed it there, and whether that reason makes sense. Our final degree project at the Complutense was a decision-support system for investors: an MLP classifier recommends buy, hold or sell, and every recommendation comes with its reasons.
 
-The team built the data, the model and the interface together. My part was the explanation layer, plus the first version of the data layer in Supabase and a share of the architecture and model integration.
+We built it as a small team and I worked on every layer of it: the Supabase data layer, the features and the MLP classifier, the FastAPI service and the Next.js interface. I also led the explainability layer, which is what makes the system worth trusting and what this case study goes deeper on.
 
-## What I built
+## The explainability layer
 
 `MLPShapExplainer`, a Python component that takes a prediction from the classifier and returns the contribution of each input feature to it, using SHAP. It sits inside the prediction workflow, so the frontend receives the recommendation and its explanation in one response and can draw them side by side.
 
 <ArchitectureDiagram
   labels={{
     nodes: ["Market data", "Supabase", "MLP classifier", "SHAP explainer", "FastAPI", "Next.js"],
-    mine: "my part",
+    mine: "I led this",
     caption: "The system, from data to screen. The explanation travels with every prediction.",
   }}
 />

@@ -34,7 +34,7 @@ export default function Explainer({ copy, locale }: Props) {
   const spring = reduce ? { duration: 0 } : { type: "spring" as const, stiffness: 220, damping: 26 };
 
   return (
-    <div className="rounded-2xl border border-line bg-surface p-5 sm:p-8">
+    <div className="border border-line bg-surface p-5 sm:p-8">
       <LayoutGroup>
         <div role="group" aria-label={copy.roleLabel} className="flex flex-wrap gap-2">
           {copy.roles.map((r) => {
@@ -46,13 +46,13 @@ export default function Explainer({ copy, locale }: Props) {
                 aria-pressed={active}
                 onClick={() => setRole(r.id)}
                 className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                  active ? "text-[#07090f]" : "text-muted hover:text-fg"
+                  active ? "text-accent-ink" : "text-muted hover:text-fg"
                 }`}
               >
                 {active && (
                   <motion.span
                     layoutId="role-pill"
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan to-violet"
+                    className="absolute inset-0 rounded-full bg-accent"
                     transition={spring}
                   />
                 )}
@@ -83,18 +83,18 @@ export default function Explainer({ copy, locale }: Props) {
                   aria-expanded={expanded}
                   aria-controls={`evidence-${s.id}`}
                   onClick={() => setOpen(expanded ? null : s.id)}
-                  className="flex items-center gap-1.5 text-left text-sm transition-colors hover:text-cyan"
+                  className="flex items-center gap-1.5 text-left text-sm transition-colors hover:text-accent"
                 >
                   <ChevronDown className={`size-3.5 shrink-0 text-muted transition-transform ${expanded ? "rotate-180" : ""}`} />
                   <span>{feature.label}</span>
-                  <span className={`ml-auto font-mono text-xs tabular-nums ${pos ? "text-cyan" : "text-amber"}`}>
+                  <span className={`ml-auto font-mono text-xs tabular-nums ${pos ? "text-accent" : "text-neg"}`}>
                     {pos ? "+" : "−"}
                     {Math.abs(s.value)}
                   </span>
                 </button>
                 <span className="relative h-6" aria-hidden>
                   <motion.span
-                    className={`absolute top-0 h-full rounded ${pos ? "bg-gradient-to-r from-cyan to-violet" : "bg-amber"}`}
+                    className={`absolute top-1 bottom-1 ${pos ? "bg-accent" : "bg-neg"}`}
                     initial={false}
                     animate={{ left: `${left}%`, width: `${width}%` }}
                     transition={spring}
@@ -121,7 +121,7 @@ export default function Explainer({ copy, locale }: Props) {
 
       <div className="mt-5 flex items-end justify-between">
         <span className="text-sm text-muted">{copy.outputLabel}</span>
-        <span className="text-gradient text-5xl font-bold tracking-tight" aria-live="polite">
+        <span className="font-serif text-6xl text-accent" aria-live="polite">
           <Counter key={role} value={output} locale={locale} />
         </span>
       </div>

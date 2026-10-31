@@ -1,32 +1,32 @@
 @import "tailwindcss";
 
-/* Dark is the default theme; [data-theme="light"] switches to light. */
+/* Dark is the default theme; [data-theme="light"] switches to a paper look. */
 :root {
-  --bg: #07090f;
-  --surface: #0d111c;
-  --surface-2: #131929;
-  --line: rgba(255, 255, 255, 0.08);
-  --line-strong: rgba(255, 255, 255, 0.16);
-  --fg: #e8ecf4;
-  --muted: #8b93a7;
-  --cyan: #22d3ee;
-  --violet: #8b5cf6;
-  --amber: #f59e0b;
-  --glow: rgba(34, 211, 238, 0.12);
+  --bg: #0e0d0b;
+  --surface: #161512;
+  --surface-2: #1f1d19;
+  --line: rgba(236, 233, 224, 0.1);
+  --line-strong: rgba(236, 233, 224, 0.22);
+  --fg: #ece9e0;
+  --muted: #9b978c;
+  --accent: #ff6a2b;
+  --accent-ink: #0e0d0b;
+  --neg: #8c9ab3;
+  --grain-opacity: 0.07;
   color-scheme: dark;
 }
 :root[data-theme="light"] {
-  --bg: #f7f8fb;
-  --surface: #ffffff;
-  --surface-2: #eef1f7;
-  --line: rgba(15, 23, 42, 0.09);
-  --line-strong: rgba(15, 23, 42, 0.18);
-  --fg: #0b1020;
-  --muted: #5b6478;
-  --cyan: #0891b2;
-  --violet: #7c3aed;
-  --amber: #d97706;
-  --glow: rgba(8, 145, 178, 0.1);
+  --bg: #f3f1ea;
+  --surface: #ebe8df;
+  --surface-2: #e2ded2;
+  --line: rgba(22, 21, 18, 0.12);
+  --line-strong: rgba(22, 21, 18, 0.26);
+  --fg: #161512;
+  --muted: #625e55;
+  --accent: #d6470a;
+  --accent-ink: #ffffff;
+  --neg: #5b6b88;
+  --grain-opacity: 0.05;
   color-scheme: light;
 }
 
@@ -38,14 +38,15 @@
   --color-line-strong: var(--line-strong);
   --color-fg: var(--fg);
   --color-muted: var(--muted);
-  --color-cyan: var(--cyan);
-  --color-violet: var(--violet);
-  --color-amber: var(--amber);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-neg: var(--neg);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
 }
 
-html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body {
   background: var(--bg);
   color: var(--fg);
@@ -53,64 +54,58 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-::selection { background: var(--cyan); color: #07090f; }
-:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 6px; }
 
-/* Signature gradient text */
-.text-gradient {
-  background: linear-gradient(100deg, var(--cyan), var(--violet) 60%, var(--cyan));
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shine 6s linear infinite;
-}
-@keyframes shine { to { background-position: 200% center; } }
-
-/* Faint grid that fades out towards the edges */
-.bg-grid {
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%);
+/* Film grain over the whole page, so flat colour never looks digital-flat. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Animated gradient border used around the portrait */
-@property --angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
-.ring-gradient {
-  background: conic-gradient(from var(--angle), var(--cyan), var(--violet), transparent 40%, var(--cyan));
-  animation: spin-angle 6s linear infinite;
+::selection { background: var(--accent); color: var(--accent-ink); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Links that underline from left to right on hover */
+.link-draw {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms cubic-bezier(0.16, 1, 0.3, 1), color 200ms;
 }
-@keyframes spin-angle { to { --angle: 360deg; } }
+.link-draw:hover { background-size: 100% 1px; }
 
 /* Infinite marquee */
-.marquee { mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.marquee { mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .marquee__track { animation: marquee var(--duration, 40s) linear infinite; }
 .marquee:hover .marquee__track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
-/* Pulsing availability dot */
-.pulse-dot { position: relative; }
-.pulse-dot::after {
+/* Availability dot */
+.live-dot { position: relative; }
+.live-dot::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 9999px;
   background: inherit;
-  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 @keyframes ping { 75%, 100% { transform: scale(2.4); opacity: 0; } }
 
 /* Case study prose */
-.prose-case { max-width: 70ch; }
-.prose-case h2 { margin: 3.5rem 0 1rem; font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
+.prose-case { max-width: 68ch; }
+.prose-case h2 { margin: 3.5rem 0 1rem; font-family: var(--font-serif); font-size: 2.25rem; font-weight: 400; line-height: 1.1; }
 .prose-case h2:first-child { margin-top: 0; }
 .prose-case p { margin: 0 0 1.1em; color: var(--muted); line-height: 1.75; font-size: 1.0625rem; }
 .prose-case strong { color: var(--fg); font-weight: 600; }
-.prose-case code { font-family: var(--font-mono); font-size: 0.9em; color: var(--cyan); background: var(--surface-2); padding: 0.15em 0.4em; border-radius: 6px; }
+.prose-case code { font-family: var(--font-mono); font-size: 0.88em; color: var(--accent); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .text-gradient, .ring-gradient, .marquee__track, .pulse-dot::after { animation: none; }
+  .marquee__track, .live-dot::after { animation: none; }
 }

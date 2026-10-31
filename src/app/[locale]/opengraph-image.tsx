@@ -25,15 +25,15 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
           width: "100%",
           height: "100%",
           display: "flex",
-          background: "linear-gradient(135deg, #24124a 0%, #07090f 50%, #062430 100%)",
-          color: "#e8ecf4",
+          background: "#0e0d0b",
+          color: "#ece9e0",
           position: "relative",
           overflow: "hidden",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 64px", width: photo ? 760 : 1200 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 24, color: "#8b93a7" }}>
-            <div style={{ width: 12, height: 12, borderRadius: 9999, background: "#34d399" }} />
+          <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 24, color: "#9b978c" }}>
+            <div style={{ width: 12, height: 12, borderRadius: 9999, background: "#ff6a2b" }} />
             {c.hero.badge}
           </div>
           <div style={{ marginTop: 28, fontSize: 76, fontWeight: 700, lineHeight: 1.02, letterSpacing: -3 }}>Enrique Travesí</div>
@@ -43,9 +43,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
               fontSize: 44,
               fontWeight: 600,
               lineHeight: 1.1,
-              backgroundImage: "linear-gradient(90deg, #22d3ee, #8b5cf6)",
-              backgroundClip: "text",
-              color: "transparent",
+              color: "#ff6a2b",
             }}
           >
             {`${c.hero.titleStart} ${c.hero.rotating[0]} ${c.hero.titleEnd}`}
