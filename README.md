@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Enrique Travesí — portfolio
 
-## Getting Started
-
-First, run the development server:
+Personal site in English and Spanish (`/en`, `/es`). Next.js 15 (App Router), TypeScript, Tailwind CSS 4, `next-intl` for the locale routes and MDX for case studies.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | File |
+| --- | --- |
+| Email, LinkedIn, GitHub, CV switch, site URL | `src/content/site.ts` |
+| All page copy, English | `src/content/en.ts` |
+| All page copy, Spanish | `src/content/es.ts` |
+| "Why hire me, explained" weights | `src/content/weights.ts` |
+| Case study text | `src/content/projects/{en,es}/<slug>.mdx` |
+| Picture credits (shown in the footer) | `src/content/image-credits.json` |
+| Styles and colour tokens (light and dark) | `src/app/globals.css` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Before publishing
 
-## Learn More
+1. **GitHub**: put the profile URL in `site.github` (the links appear on their own).
+2. **CV**: save a PDF without the phone number as `public/Enrique_Travesi_Ortega_CV.pdf` and set `cvAvailable: true`.
+3. **Domain**: set `NEXT_PUBLIC_SITE_URL` in Vercel (used by the sitemap, canonical URLs and social cards).
 
-To learn more about Next.js, take a look at the following resources:
+## Add a project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Add an entry to `work.projects` in both `en.ts` and `es.ts` (title, status, summary, optional picture).
+2. For a case-study page, give it a `slug`, write `src/content/projects/en/<slug>.mdx` and `src/content/projects/es/<slug>.mdx`, and add the slug to the `slugs` list in `src/app/[locale]/projects/[slug]/page.tsx` and to `paths` in `src/app/sitemap.ts`.
+3. When a planned project ships, change its `status` and add the repository link in the summary or the case study.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this folder to a GitHub repository.
+2. On vercel.com: **Add New → Project**, import the repository, keep the defaults (framework: Next.js) and deploy.
+3. **Settings → Environment Variables**: `NEXT_PUBLIC_SITE_URL=https://your-domain`.
+4. **Settings → Domains** to connect a custom domain.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Pictures
+
+All photographs come from Wikimedia Commons under public domain or CC BY-SA 4.0; each is credited in the footer with a link to its source page. They show Madrid and the world of finance, not the projects themselves.
