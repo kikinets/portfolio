@@ -3,7 +3,7 @@ export const site = {
   name: "Enrique Travesí Ortega",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://enriquetravesi.vercel.app",
   email: "quiqueto02@gmail.com",
-  linkedin: "https://www.linkedin.com/in/enrique-travesi-ortega-b3323b273",
+  linkedin: "https://www.linkedin.com/in/enrique-traves%C3%AD-ortega-b3323b273",
   // Leave empty until the profile is ready; the GitHub links hide themselves.
   github: "https://github.com/kikinets",
   // Put the PDF in /public with this name, then set cvAvailable to true.
