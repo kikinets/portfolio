@@ -2,7 +2,7 @@ import type { Content } from "./types";
 
 const es: Content = {
   meta: {
-    title: "Enrique Travesí — Ingeniero de IA aplicada y ML",
+    title: "Enrique Travesí Ortega — Ingeniero de IA aplicada y ML",
     description:
       "Ingeniero de software con cabeza de negocio. Backend bancario en BBVA, TFG de IA explicable con un 9,7 y ahora a fondo con LLMs, RAG y agentes. Abierto a puestos junior de IA aplicada y ML.",
   },
@@ -27,7 +27,7 @@ const es: Content = {
     ctaWork: "Ver proyectos",
     ctaEmail: "Escríbeme",
     ctaCv: "Descargar CV",
-    photoAlt: "Retrato de Enrique Travesí, de brazos cruzados y con camisa blanca",
+    photoAlt: "Retrato de Enrique Travesí Ortega, de brazos cruzados y con camisa blanca",
     chips: ["TFG de XAI · 9,7/10", "Backend en BBVA"],
     stats: [
       { value: 9.7, decimals: 1, suffix: "/10", label: "Nota del TFG de IA explicable" },
@@ -75,6 +75,26 @@ const es: Content = {
         body: "Dos años enseñando C++ a universitarios: punteros, orientación a objetos, estructuras de datos. Aprobaron todos.",
         proof: "Aprobaron 9 de 9 alumnos",
       },
+    ],
+  },
+  education: {
+    kicker: "Formación",
+    title: "Dos grados a la vez: ingeniería y empresa.",
+    intro: "Seis años estudiando Ingeniería Informática y Administración y Dirección de Empresas en paralelo en la Universidad Complutense de Madrid. Por eso puedo construir el modelo y también explicar qué significa para el negocio.",
+    degrees: [
+      { name: "Ingeniería Informática", focus: "Programación, algoritmia y estructuras de datos, sistemas de computación, ingeniería del software" },
+      { name: "Administración y Dirección de Empresas", focus: "Finanzas, contabilidad, análisis de inversiones, dirección y estrategia" },
+    ],
+    facts: [
+      { value: "2020 – 2026", label: "Universidad Complutense de Madrid" },
+      { value: "9,7/10", label: "TFG de IA explicable" },
+    ],
+    honoursLabel: "Matrículas de Honor",
+    honoursNote: "La máxima distinción universitaria en España, limitada al 5 % de cada grupo.",
+    honours: [
+      { subject: "Fundamentos de la Programación II", area: "Ingeniería Informática" },
+      { subject: "Estructura de Computadores", area: "Ingeniería Informática" },
+      { subject: "Valoración de Activos y Análisis de Inversiones", area: "ADE" },
     ],
   },
   featured: {
@@ -200,7 +220,7 @@ const es: Content = {
         org: "Universidad Complutense de Madrid",
         points: [
           "TFG de IA explicable para decisiones financieras, calificado con un 9,7",
-          "Matrículas de honor en Fundamentos de la Programación II, Arquitectura de Computadores y Valoración de Activos",
+          "Matrículas de Honor en Fundamentos de la Programación II, Estructura de Computadores y Valoración de Activos y Análisis de Inversiones",
         ],
       },
       {

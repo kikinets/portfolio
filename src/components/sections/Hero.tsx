@@ -39,7 +39,10 @@ export default function Hero({ hero, locale, photo }: Props) {
     <section id="about" className="mx-auto max-w-6xl px-5 pt-28 pb-20 sm:px-8 sm:pt-36 lg:pb-28">
       <div className="grid items-end gap-12 lg:grid-cols-[1.35fr_0.65fr] lg:gap-16">
         <div>
-          <motion.p {...fade(0)} className="flex items-center gap-2.5 text-sm text-muted">
+          <motion.p {...fade(0)} className="font-serif text-2xl sm:text-3xl">
+            {site.name}
+          </motion.p>
+          <motion.p {...fade(0.05)} className="mt-3 flex items-center gap-2.5 text-sm text-muted">
             <span className="live-dot size-2 rounded-full bg-accent" />
             {hero.badge}
           </motion.p>
@@ -47,8 +50,9 @@ export default function Hero({ hero, locale, photo }: Props) {
           <h1 className="mt-7 font-serif text-[3.1rem] leading-[0.98] tracking-[-0.01em] sm:text-7xl lg:text-[5.6rem]">
             <Line delay={0.1} reduce={reduce}>{hero.titleStart}</Line>
             <Line delay={0.22} reduce={reduce}>
-              <RotatingWord words={hero.rotating} /> {hero.titleEnd}
+              <RotatingWord words={hero.rotating} />
             </Line>
+            <Line delay={0.34} reduce={reduce}>{hero.titleEnd}</Line>
           </h1>
 
           <motion.p {...fade(0.45)} className="mt-8 max-w-xl text-lg leading-relaxed text-muted">

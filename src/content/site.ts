@@ -1,7 +1,6 @@
 // Facts that are the same in every language. Edit here, not in the components.
 export const site = {
   name: "Enrique Travesí Ortega",
-  shortName: "Enrique Travesí",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://enriquetravesi.vercel.app",
   email: "quiqueto02@gmail.com",
   linkedin: "https://www.linkedin.com/in/enrique-travesi-ortega-b3323b273",

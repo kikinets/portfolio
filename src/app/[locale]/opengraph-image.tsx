@@ -3,7 +3,7 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 import { getContent, isLocale } from "@/content";
 
-export const alt = "Enrique Travesí — Applied AI & ML Engineer";
+export const alt = "Enrique Travesí Ortega — Applied AI & ML Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -36,7 +36,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
             <div style={{ width: 12, height: 12, borderRadius: 9999, background: "#ff6a2b" }} />
             {c.hero.badge}
           </div>
-          <div style={{ marginTop: 28, fontSize: 76, fontWeight: 700, lineHeight: 1.02, letterSpacing: -3 }}>Enrique Travesí</div>
+          <div style={{ marginTop: 28, fontSize: 64, fontWeight: 700, lineHeight: 1.02, letterSpacing: -2 }}>Enrique Travesí Ortega</div>
           <div
             style={{
               marginTop: 18,

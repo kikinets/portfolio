@@ -2,7 +2,7 @@ import type { Content } from "./types";
 
 const en: Content = {
   meta: {
-    title: "Enrique Travesí — Applied AI & ML Engineer",
+    title: "Enrique Travesí Ortega — Applied AI & ML Engineer",
     description:
       "Software engineer with a business brain. Banking backend at BBVA, a 9.7/10 thesis on explainable AI, now going all-in on LLMs, RAG and agents. Open to junior Applied AI & ML roles.",
   },
@@ -20,14 +20,14 @@ const en: Content = {
   hero: {
     badge: "Open to work · Junior Applied AI / ML · Madrid",
     titleStart: "I build AI that",
-    rotating: ["explains", "justifies", "stands behind"],
+    rotating: ["explains", "justifies", "defends"],
     titleEnd: "its decisions.",
     subtitle:
       "Software engineer with a business brain. I've shipped production backend for BBVA, built a neural network that explains its own trades, and I'm now going all-in on LLMs, RAG and agents.",
     ctaWork: "See my work",
     ctaEmail: "Email me",
     ctaCv: "Download CV",
-    photoAlt: "Portrait of Enrique Travesí, arms crossed, wearing a white shirt",
+    photoAlt: "Portrait of Enrique Travesí Ortega, arms crossed, wearing a white shirt",
     chips: ["XAI thesis · 9.7/10", "Shipped at BBVA"],
     stats: [
       { value: 9.7, decimals: 1, suffix: "/10", label: "Explainable-AI thesis grade" },
@@ -75,6 +75,26 @@ const en: Content = {
         body: "Two years teaching C++ to university students: pointers, OOP, data structures. Every one of them passed.",
         proof: "9 out of 9 students passed",
       },
+    ],
+  },
+  education: {
+    kicker: "Education",
+    title: "Two degrees at once: engineering and business.",
+    intro: "Six years studying Computer Engineering and Business Administration side by side at Universidad Complutense de Madrid. It's why I can build the model and also explain what it means for the business.",
+    degrees: [
+      { name: "Computer Engineering", focus: "Programming, algorithms and data structures, computer systems, software engineering" },
+      { name: "Business Administration", focus: "Finance, accounting, investment analysis, management and strategy" },
+    ],
+    facts: [
+      { value: "2020 – 2026", label: "Universidad Complutense de Madrid" },
+      { value: "9.7/10", label: "Final degree project on explainable AI" },
+    ],
+    honoursLabel: "Matrícula de Honor",
+    honoursNote: "The highest distinction in Spanish universities, capped at 5% of each class.",
+    honours: [
+      { subject: "Fundamentals of Programming II", area: "Computer Engineering" },
+      { subject: "Computer Structure", area: "Computer Engineering" },
+      { subject: "Asset Valuation and Investment Analysis", area: "Business Administration" },
     ],
   },
   featured: {
@@ -200,7 +220,7 @@ const en: Content = {
         org: "Universidad Complutense de Madrid",
         points: [
           "Thesis on explainable AI for financial decisions, graded 9.7/10",
-          "Honours in Programming II, Computer Architecture and Asset Valuation",
+          "Matrícula de Honor in Fundamentals of Programming II, Computer Structure, and Asset Valuation and Investment Analysis",
         ],
       },
       {

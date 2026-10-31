@@ -47,6 +47,16 @@ export type Content = {
     intro: string;
     items: { title: string; body: string; proof: string }[];
   };
+  education: {
+    kicker: string;
+    title: string;
+    intro: string;
+    degrees: { name: string; focus: string }[];
+    facts: { value: string; label: string }[];
+    honoursLabel: string;
+    honoursNote: string;
+    honours: { subject: string; area: string }[];
+  };
   featured: {
     kicker: string;
     title: string;

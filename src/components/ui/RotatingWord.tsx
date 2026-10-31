@@ -14,12 +14,18 @@ export default function RotatingWord({ words }: { words: string[] }) {
     return () => clearInterval(id);
   }, [reduce, words.length]);
 
+  const longest = words.reduce((a, b) => (b.length > a.length ? b : a));
+
   return (
     <span className="relative inline-grid overflow-hidden align-bottom">
+      {/* Invisible copy of the longest word keeps the width fixed while words swap */}
+      <em aria-hidden className="invisible col-start-1 row-start-1 pr-[0.08em] italic">
+        {longest}
+      </em>
       <AnimatePresence mode="wait" initial={false}>
         <motion.em
           key={words[index]}
-          className="col-start-1 row-start-1 pr-[0.08em] text-accent italic"
+          className="col-start-1 row-start-1 pr-[0.08em] text-left text-accent italic"
           initial={{ y: "70%", opacity: 0 }}
           animate={{ y: "0%", opacity: 1 }}
           exit={{ y: "-70%", opacity: 0 }}

@@ -47,8 +47,8 @@ export default function Nav({ locale, nav, home = true }: Props) {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8" aria-label="Main">
-        <Link href="/" className="font-serif text-2xl leading-none" onClick={() => setOpen(false)}>
-          Enrique Travesí<span className="text-accent">.</span>
+        <Link href="/" className="font-serif text-xl leading-none sm:text-2xl" onClick={() => setOpen(false)}>
+          Enrique Travesí Ortega<span className="text-accent">.</span>
         </Link>
 
         <ul className="hidden items-center gap-1 md:flex">

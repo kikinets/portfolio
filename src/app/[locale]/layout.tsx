@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { meta } = getContent(locale);
   return {
     metadataBase: new URL(site.url),
-    title: { default: meta.title, template: `%s — ${site.shortName}` },
+    title: { default: meta.title, template: `%s — ${site.name}` },
     description: meta.description,
     alternates: {
       canonical: `/${locale}`,
