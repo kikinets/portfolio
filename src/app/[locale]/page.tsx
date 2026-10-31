@@ -1,7 +1,13 @@
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { getContent, isLocale } from "@/content";
-import { About, Contact, Experience, Explain, Footer, Hero, Now, Work } from "@/components/Sections";
+import { getPhoto } from "@/content/photo";
+import Nav from "@/components/ui/Nav";
+import ScrollProgress from "@/components/ui/ScrollProgress";
+import Hero from "@/components/sections/Hero";
+import Strengths, { Credibility } from "@/components/sections/Strengths";
+import { Building, Featured } from "@/components/sections/Work";
+import { Contact, Footer, Journey, Stack, WhyMe } from "@/components/sections/Rest";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -11,16 +17,20 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      <Hero c={c} locale={locale} />
+      <ScrollProgress />
+      <Nav locale={locale} nav={c.nav} />
       <main>
-        <About c={c} />
-        <Explain c={c} />
-        <Work c={c} />
-        <Experience c={c} />
-        <Now c={c} />
-        <Contact c={c} />
+        <Hero hero={c.hero} locale={locale} photo={getPhoto()} />
+        <Credibility credibility={c.credibility} />
+        <Strengths strengths={c.strengths} />
+        <Featured featured={c.featured} />
+        <Building building={c.building} />
+        <WhyMe explain={c.explain} locale={locale} />
+        <Journey journey={c.journey} />
+        <Stack stack={c.stack} />
+        <Contact contact={c.contact} />
       </main>
-      <Footer c={c} />
+      <Footer footer={c.footer} />
     </>
   );
 }

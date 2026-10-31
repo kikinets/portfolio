@@ -1,14 +1,10 @@
 import ArchitectureDiagram from "@/components/ArchitectureDiagram";
-import ExplanationFragment from "@/components/ExplanationFragment";
-import CaseFigure from "@/components/CaseFigure";
 
 ## El problema
 
 Un modelo que dice "vende" sirve de poco a quien tiene que decidir. Necesita saber qué lo empujó ahí y si esa razón tiene sentido. Nuestro trabajo de fin de grado en la Complutense era un sistema de apoyo a la decisión para inversores: un clasificador MLP recomienda comprar, mantener o vender, y cada recomendación llega con sus motivos.
 
 El equipo construyó juntos los datos, el modelo y la interfaz. Mi parte fue la capa de explicabilidad, además de la primera versión de la capa de datos en Supabase y parte de la arquitectura y la integración del modelo.
-
-<CaseFigure portrait src="/images/thomas-edison-stock-ticker-nmah-jn2014-3625.jpg" width={1920} height={2375} alt="Un teletipo bursátil de latón bajo una campana de cristal, con la cinta de papel saliendo, sobre una base negra rotulada Gold and Stock Telegraph Co." caption="Un teletipo bursátil con patente de Edison. Precios en cinta de papel, sin motivos." />
 
 ## Lo que construí
 
@@ -22,18 +18,6 @@ El equipo construyó juntos los datos, el modelo y la interfaz. Mi parte fue la 
   }}
 />
 
-<ExplanationFragment
-  title="Recomendación: vender"
-  note="Ejemplo ilustrativo de la vista de explicación, con valores inventados. Cada barra es el empuje de una variable hacia la acción recomendada o en contra."
-  rows={[
-    { label: "Momento a 20 días", value: 0.18 },
-    { label: "RSI, 14 días", value: 0.12 },
-    { label: "Volatilidad, 10 días", value: -0.09 },
-    { label: "Volumen frente a media de 30 días", value: -0.05 },
-    { label: "Rentabilidad del índice sectorial", value: 0.04 },
-  ]}
-/>
-
 ## Tres decisiones que importaron
 
 **Datos de referencia del momento correcto.** SHAP mide cada variable frente a una muestra de referencia. En una serie temporal, una referencia descuidada puede incluir datos posteriores al día que se explica, y eso cuela el futuro en la explicación. El explicador construye su referencia solo con datos coherentes en el tiempo con la predicción.
@@ -41,8 +25,6 @@ El equipo construyó juntos los datos, el modelo y la interfaz. Mi parte fue la 
 **Construir una vez, explicar muchas.** Crear un explicador SHAP es lo caro; preguntarle por una predicción es barato. El explicador se cachea, así que explicar una recomendación nueva no obliga a pagar otra vez el coste de arranque.
 
 **Números que una persona pueda leer.** La salida bruta de SHAP es una matriz: un valor por variable para cada una de las tres clases. La capa la convierte en una lista corta y ordenada de contribuciones hacia la acción recomendada, con los nombres de las variables originales, que es lo que muestra la interfaz.
-
-<CaseFigure src="/images/bolsa-de-madrid.jpg" width={1920} height={1536} alt="La fachada con columnas de la Bolsa de Madrid tras plátanos de sombra en otoño" caption="Bolsa de Madrid, plaza de la Lealtad" />
 
 ## Resultado
 

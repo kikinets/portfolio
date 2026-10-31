@@ -6,7 +6,7 @@ export const site = {
   email: "quiqueto02@gmail.com",
   linkedin: "https://www.linkedin.com/in/enrique-travesi-ortega-b3323b273",
   // Leave empty until the profile is ready; the GitHub links hide themselves.
-  github: "",
+  github: "https://github.com/kikinets",
   // Put the PDF in /public with this name, then set cvAvailable to true.
   cvPath: "/Enrique_Travesi_Ortega_CV.pdf",
   cvAvailable: false,

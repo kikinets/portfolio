@@ -4,64 +4,155 @@ const es: Content = {
   meta: {
     title: "Enrique Travesí — Ingeniero de IA aplicada y ML",
     description:
-      "Ingeniero de software en Madrid que construye IA capaz de explicar sus decisiones. Ingeniería Informática y ADE, backend bancario en BBVA, TFG de IA explicable con un 9,7. Abierto a puestos junior de IA aplicada y ML.",
+      "Ingeniero de software con cabeza de negocio. Backend bancario en BBVA, TFG de IA explicable con un 9,7 y ahora a fondo con LLMs, RAG y agentes. Abierto a puestos junior de IA aplicada y ML.",
   },
-  nav: { work: "Proyectos", experience: "Experiencia", contact: "Contacto", theme: "Cambiar tema de color", language: "View in English", home: "Inicio" },
+  nav: {
+    about: "Sobre mí",
+    work: "Proyectos",
+    journey: "Trayectoria",
+    contact: "Contacto",
+    cta: "Hablemos",
+    theme: "Cambiar tema de color",
+    language: "View in English",
+    menu: "Abrir menú",
+    close: "Cerrar menú",
+  },
   hero: {
-    first: "Enrique",
-    last: "Travesí",
-    sentence:
-      "Ingeniero de software que construye IA capaz de explicar sus decisiones. Informática y ADE, backend bancario en BBVA, un TFG de IA explicable con un 9,7. Abierto a puestos junior de IA aplicada y ML.",
-    action: "Escríbeme",
-    picture: {
-      src: "/images/madrid-070.jpg",
-      width: 1920,
-      height: 1221,
-      alt: "La Gran Vía de Madrid vista desde la calle de Alcalá, con la cúpula del Metrópolis a la izquierda, en una postal antigua",
-      caption: "Gran Vía, Madrid, h. 1915",
-    },
-  },
-  about: {
-    heading: "Sobre mí",
-    paragraph:
-      "Estudié Ingeniería Informática y Administración de Empresas a la vez, y eso marca cómo construyo: un modelo solo sirve cuando quien actúa con él entiende por qué dijo lo que dijo. He programado backend para la custodia de activos digitales de BBVA, he hecho pruebas de auditoría orientadas a fraude en BDO y he enseñado C++ a universitarios hasta que aprobaron todos. Ahora me estoy metiendo a fondo en LLMs, recuperación y agentes.",
-    facts: [
-      { label: "Ubicación", value: "Madrid, España" },
-      { label: "Idiomas", value: "Español, nativo · Inglés, C1" },
-      { label: "Situación", value: "Disponible, desde ya" },
+    badge: "Disponible · Junior IA aplicada / ML · Madrid",
+    titleStart: "Construyo IA que",
+    rotating: ["explica", "justifica", "defiende"],
+    titleEnd: "sus decisiones.",
+    subtitle:
+      "Ingeniero de software con cabeza de negocio. He construido backend para BBVA, he hecho que una red neuronal explique sus operaciones a personas y ahora voy a por todas con LLMs, RAG y agentes.",
+    ctaWork: "Ver proyectos",
+    ctaEmail: "Escríbeme",
+    ctaCv: "Descargar CV",
+    photoAlt: "Retrato de Enrique Travesí, de brazos cruzados y con camisa blanca",
+    chips: ["TFG de XAI · 9,7/10", "Backend en BBVA"],
+    stats: [
+      { value: 9.7, decimals: 1, suffix: "/10", label: "Nota del TFG de IA explicable" },
+      { value: 100, suffix: "%", label: "Aprobados entre mis alumnos" },
+      { value: 2, label: "Grados a la vez: Informática + ADE" },
+      { value: 400, suffix: "+", label: "Horas de AI Engineering, en curso" },
     ],
-    records: [
+  },
+  credibility: {
+    label: "Donde he construido, auditado y aprendido",
+    items: ["BBVA · vía Softtek", "BDO", "Universidad Complutense de Madrid", "42 Madrid", "Ironhack", "Proxus Academy"],
+  },
+  strengths: {
+    kicker: "Qué aporto",
+    title: "Código, modelos y visión de negocio en una sola persona.",
+    intro: "La mayoría de juniors trae una de las tres. Yo llevo seis años entrenando las tres.",
+    items: [
       {
-        label: "Herramientas",
-        items: [
-          { name: "Python", note: "a diario" },
-          { name: "SHAP, scikit-learn", note: "TFG" },
-          { name: "Pandas, NumPy, Jupyter", note: "TFG, BDO" },
-          { name: "FastAPI, Flask, REST", note: "TFG, BBVA" },
-          { name: "SQL, MySQL, Supabase", note: "TFG" },
-          { name: "Next.js, TypeScript", note: "TFG" },
-          { name: "C, C++, Java", note: "42, UCM" },
-          { name: "Git, Linux", note: "a diario" },
-        ],
+        icon: "sparkles",
+        title: "IA explicable",
+        body: "La precisión no basta cuando hay dinero en juego. Mi TFG hizo que una red neuronal justificara con SHAP cada recomendación de comprar, mantener o vender.",
+        proof: "TFG calificado con un 9,7",
       },
       {
-        label: "Dominio",
-        items: [
-          { name: "Backend bancario, APX y ASO", note: "BBVA" },
-          { name: "Custodia de activos digitales", note: "BBVA" },
-          { name: "Conciliaciones y pruebas de fraude", note: "BDO" },
-          { name: "Valoración de activos", note: "matrícula" },
-          { name: "Arquitectura de computadores", note: "matrícula" },
-          { name: "Enseñar a programar", note: "2 años" },
-        ],
+        icon: "server",
+        title: "Backend en producción",
+        body: "Desarrollé funcionalidades para la plataforma de custodia de activos digitales de BBVA y las llevé de desarrollo a integración y a producción.",
+        proof: "Banca · APX · APIs REST",
+      },
+      {
+        icon: "briefcase",
+        title: "Visión de negocio",
+        body: "Un grado completo de ADE a la vez que Ingeniería Informática. Hablo con negocio en su idioma, no en tensores.",
+        proof: "Doble grado · UCM",
+      },
+      {
+        icon: "messages",
+        title: "Explico lo difícil",
+        body: "Dos años enseñando C++ a universitarios: punteros, orientación a objetos, estructuras de datos.",
+        proof: "Aprobaron 9 de 9 alumnos",
+      },
+      {
+        icon: "bot",
+        title: "LLMs, RAG y agentes",
+        body: "Metido en un programa de AI Engineering de más de 400 horas, publicando en abierto proyectos de recuperación y agentes, con evaluaciones desde el primer día.",
+        proof: "Ironhack · nov 2026 – feb 2027",
+      },
+      {
+        icon: "shield",
+        title: "Olfato para el fraude y el riesgo",
+        body: "En BDO hice pruebas de fraude automáticas y manuales sobre datos contables reales: conciliaciones, anomalías, asientos en fines de semana y festivos.",
+        proof: "Auditoría IT · BDO",
+      },
+    ],
+  },
+  featured: {
+    kicker: "Proyecto destacado",
+    title: "Si el modelo dice vende, tiene que decir por qué.",
+    slug: "xai-financial-decision-support",
+    name: "IA explicable para decisiones financieras",
+    tagline: "Una red neuronal recomienda comprar, mantener o vender. La capa de explicabilidad que construí hace que cada decisión se entienda.",
+    highlights: [
+      "Desarrollé MLPShapExplainer: explicaciones SHAP locales para cada predicción de un clasificador MLP",
+      "Datos de referencia coherentes en el tiempo, para que una explicación nunca mire al futuro",
+      "Caché del explicador y contribuciones ordenadas y legibles, servidas con FastAPI a un frontend en Next.js",
+      "Diseñé la primera capa de datos en Supabase y participé en la arquitectura del sistema",
+    ],
+    stack: ["Python", "SHAP", "scikit-learn", "FastAPI", "Supabase", "Next.js", "TypeScript"],
+    grade: "9,7",
+    gradeLabel: "Nota final, sobre 10",
+    cta: "Leer el caso de estudio",
+    mockup: {
+      title: "Vista de explicación",
+      label: "Recomendación",
+      recommendation: "VENDER",
+      rows: [
+        { label: "Momento a 20 días", value: 0.18 },
+        { label: "RSI, 14 días", value: 0.12 },
+        { label: "Volatilidad, 10 días", value: -0.09 },
+        { label: "Volumen vs media 30 días", value: -0.05 },
+        { label: "Rentabilidad del sector", value: 0.04 },
+      ],
+      note: "Valores ilustrativos",
+    },
+  },
+  building: {
+    kicker: "En construcción",
+    title: "Publicando en abierto, proyecto a proyecto.",
+    intro: "Cada uno empieza con su batería de evaluaciones, no con una demo. Los repositorios son públicos desde el primer día.",
+    items: [
+      {
+        status: "now",
+        statusLabel: "En curso",
+        date: "nov 2026",
+        name: "Crédito, explicado",
+        pitch:
+          "Un modelo de riesgo de crédito cuyos valores SHAP convierte un LLM en una carta clara para el solicitante, contrastada después con los números para que no pueda inventar motivos.",
+        stack: ["scikit-learn", "SHAP", "LLM", "FastAPI"],
+      },
+      {
+        status: "next",
+        statusLabel: "Próximamente",
+        date: "dic 2026",
+        name: "Copiloto de informes",
+        pitch:
+          "Pregunta lo que quieras sobre los informes que las cotizadas españolas presentan a la CNMV. Cada respuesta cita su página y una batería de evaluaciones mide fidelidad y recuperación.",
+        stack: ["RAG", "Embeddings", "Vector DB", "Evals"],
+      },
+      {
+        status: "next",
+        statusLabel: "Próximamente",
+        date: "ene 2027",
+        name: "Agente auditor",
+        pitch:
+          "Un auditor con IA servido por MCP que ejecuta las pruebas de fraude que hacía a mano en BDO: conciliaciones, asientos en fin de semana, valores atípicos.",
+        stack: ["Agentes", "MCP", "Tool use", "Python"],
       },
     ],
   },
   explain: {
-    heading: "Por qué contratarme, explicado",
+    kicker: "Interactivo",
+    heading: "¿Por qué contratarme? Que lo explique el modelo.",
     intro:
-      "Mi TFG explicaba con SHAP las recomendaciones de comprar, mantener o vender de una red neuronal: cada variable empuja la predicción arriba o abajo desde una base. Aquí está la misma imagen apuntando a mí. Elige un puesto y mira qué empuja el encaje.",
-    note: "Los pesos son mi autoevaluación honesta, no la salida de un modelo entrenado. La barra que tira en contra también es real.",
+      "La misma cascada SHAP de mi TFG, apuntando a mí. Elige un puesto y mira qué partes de mi perfil suben el encaje y cuáles lo bajan.",
+    note: "Los pesos son mi autoevaluación honesta, no un modelo entrenado. La barra en contra también es real.",
     roleLabel: "Puesto",
     baseLabel: "Candidato junior medio",
     outputLabel: "Encaje para el puesto",
@@ -82,131 +173,91 @@ const es: Content = {
       experience: { label: "Menos de un año en empresa", evidence: "Ocho meses en Softtek y seis en BDO. Aprendo rápido; sigo siendo junior." },
     },
   },
-  work: {
-    heading: "Proyectos",
-    remark: "Todo lo que sigue se hace en abierto: el repositorio desde el primer día, los resultados cuando sean reales.",
-    readCase: "Leer el caso de estudio",
-    projects: [
+  journey: {
+    kicker: "Trayectoria",
+    title: "Dónde he estado construyendo.",
+    items: [
       {
-        slug: "xai-financial-decision-support",
-        title: "IA explicable en finanzas",
-        status: "Trabajo de fin de grado · 2026 · 9,7 / 10",
-        summary:
-          "La capa de explicación de un sistema que recomienda comprar, mantener o vender: valores SHAP para un MLP, cacheados, coherentes en el tiempo y legibles por una persona.",
-        picture: {
-          src: "/images/interior-del-palacio-de-la-bolsa-madrid.jpg",
-          width: 1920,
-          height: 1440,
-          alt: "Paneles de cotizaciones y una pantalla de precios dentro de la Bolsa de Madrid",
-          caption: "Palacio de la Bolsa, Madrid",
-        },
+        kind: "study",
+        period: "nov 2026 – feb 2027",
+        role: "Bootcamp de AI Engineering",
+        org: "Ironhack",
+        tag: "Ahora",
+        points: [
+          "Más de 400 horas de ML aplicado, deep learning, NLP, apps con LLMs, RAG, agentes, MLOps y despliegue en la nube",
+          "Rumbo a un proyecto final de principio a fin",
+        ],
       },
       {
-        title: "Informes que responden",
-        status: "Planificado · diciembre 2026",
-        summary:
-          "Preguntas y respuestas sobre los informes que las cotizadas españolas presentan a la CNMV, con citas a la página y una batería de evaluaciones de fidelidad y recuperación.",
-        picture: {
-          src: "/images/bolsa-de-madrid.jpg",
-          width: 1920,
-          height: 1536,
-          alt: "La fachada con columnas de la Bolsa de Madrid tras plátanos de sombra en otoño",
-          caption: "Bolsa de Madrid, plaza de la Lealtad",
-        },
+        kind: "work",
+        period: "ene – ago 2026",
+        role: "Junior Software Engineer",
+        org: "Softtek · cuenta BBVA",
+        points: [
+          "Desarrollé backend para la custodia de activos digitales de BBVA: transacciones APX, librerías y componentes ASO para wallets, cuentas, direcciones y cuentas VASP",
+          "Depuré servicios interdependientes con análisis de trazas en entornos DEV e integración",
+          "Impulsé la validación por los entornos de release hasta llegar a producción",
+        ],
       },
       {
-        title: "Un agente que audita el libro mayor",
-        status: "Planificado · enero 2027",
-        summary:
-          "Un agente con herramientas, servido por MCP, que ejecuta las pruebas que hacía a mano en BDO: conciliaciones, asientos en fines de semana y festivos, importes que no encajan.",
-        picture: {
-          src: "/images/pittsboro-merchant-business-ledger.jpg",
-          width: 1920,
-          height: 2881,
-          alt: "Una página manuscrita del libro de cuentas de un comerciante de 1833 con columnas de importes",
-          caption: "Libro de cuentas de un comerciante, 1833",
-        },
+        kind: "study",
+        period: "2020 – 2026",
+        role: "Doble grado: Ingeniería Informática + ADE",
+        org: "Universidad Complutense de Madrid",
+        points: [
+          "TFG de IA explicable para decisiones financieras, calificado con un 9,7",
+          "Matrículas de honor en Fundamentos de la Programación II, Arquitectura de Computadores y Valoración de Activos",
+        ],
       },
       {
-        title: "Decisiones de crédito en palabras",
-        status: "En curso · noviembre 2026",
-        summary:
-          "Un modelo de riesgo de crédito cuyos valores SHAP un LLM convierte en una carta para el solicitante, contrastada después con los números para que no pueda inventar motivos.",
+        kind: "work",
+        period: "ene – jul 2025",
+        role: "IT Audit Intern",
+        org: "BDO España",
+        points: [
+          "Concilié balances y balances de sumas y saldos de ejercicios consecutivos",
+          "Hice pruebas de fraude automáticas y manuales: consistencia de transacciones, anomalías, asientos en fines de semana y festivos",
+        ],
+      },
+      {
+        kind: "study",
+        period: "ago 2024 – ene 2025",
+        role: "Programa de ingeniería de software",
+        org: "42 Madrid · Fundación Telefónica",
+        points: ["C y Unix por proyectos y entre pares: libft, ft_printf, get_next_line, push_swap, Born2BeRoot"],
+      },
+      {
+        kind: "teaching",
+        period: "2023 – 2024",
+        role: "Profesor de programación",
+        org: "Proxus Academy",
+        points: ["Enseñé fundamentos de C++ (orientación a objetos, punteros, estructuras de datos) a universitarios", "100% de aprobados entre 9 alumnos"],
       },
     ],
-    earlier:
-      "Antes, en 42 Madrid: libft, get_next_line, ft_printf, push_swap y Born2BeRoot. C desde cero, con revisión entre pares.",
-    fragment: {
-      title: "Solicitud 2291 · denegada",
-      letter:
-        "Su solicitud se ha denegado principalmente porque su deuda actual es alta en relación con sus ingresos y dos pagos recientes llegaron tarde.",
-      reasons: [
-        { label: "Deuda sobre ingresos 46%", value: -0.21 },
-        { label: "2 impagos, 12 meses", value: -0.14 },
-        { label: "6 años en su empleo", value: 0.08 },
-        { label: "Sin incumplimientos", value: 0.05 },
-      ],
-      check: "Cada motivo de la carta coincide con un valor SHAP principal",
-    },
   },
-  experience: {
-    heading: "Experiencia",
+  stack: {
+    kicker: "Herramientas",
+    title: "Con qué trabajo.",
     groups: [
-      {
-        label: "Empresa",
-        rows: [
-          { role: "Junior Software Engineer", org: "Softtek, para BBVA", focus: "Backend de custodia de activos digitales", dates: "ene–ago 2026" },
-          { role: "IT Audit Intern", org: "BDO España", focus: "Conciliaciones y pruebas de fraude", dates: "ene–jul 2025" },
-        ],
-      },
-      {
-        label: "Docencia",
-        rows: [
-          { role: "Profesor de programación", org: "Proxus Academy", focus: "Fundamentos de C++, 100% aprobados", dates: "2023–2024" },
-        ],
-      },
-      {
-        label: "Formación",
-        rows: [
-          { role: "Bootcamp AI Engineering", org: "Ironhack", focus: "ML, NLP, RAG, agentes, MLOps", dates: "2026–2027" },
-          { role: "Doble grado ADE e Informática", org: "Complutense de Madrid", focus: "TFG de IA explicable, 9,7", dates: "2020–2026" },
-          { role: "Ingeniería de software", org: "42 Madrid", focus: "C, algoritmia, Unix", dates: "2024–2025" },
-        ],
-      },
+      { name: "IA y datos", items: ["Python", "SHAP", "scikit-learn", "Pandas", "NumPy", "Matplotlib", "Jupyter", "IA explicable"] },
+      { name: "Subiendo de nivel", items: ["LLMs", "RAG", "Agentes de IA", "Deep learning", "NLP", "MLOps"] },
+      { name: "Backend", items: ["FastAPI", "Flask", "APIs REST", "SQL", "MySQL", "Supabase", "APX", "ASO"] },
+      { name: "Lenguajes y herramientas", items: ["C", "C++", "Java", "TypeScript", "Next.js", "Git", "Linux", "Testing"] },
     ],
-    cv: "Descargar el CV completo",
-  },
-  now: {
-    heading: "Ahora",
-    paragraphs: [
-      "De noviembre de 2026 a febrero de 2027 estoy en el bootcamp de AI Engineering de Ironhack: 400 horas de machine learning, deep learning, NLP, RAG, agentes, MLOps y despliegue en la nube.",
-      "Lo estoy usando para sacar en abierto los proyectos de arriba, uno a uno, cada uno con su evaluación escrita antes que su demo.",
-      "Lo que busco: un puesto junior de IA aplicada o ML en un equipo que entregue modelos de los que la gente depende, idealmente donde las finanzas, el riesgo o la confianza formen parte del problema.",
-    ],
-    link: "Cómo expliqué las operaciones de un MLP",
-    picture: {
-      src: "/images/1931-10-18-madrid-granvia.jpg",
-      width: 1709,
-      height: 1121,
-      alt: "La avenida del Conde de Peñalver, hoy Gran Vía, llena de coches y tranvías en una postal fotográfica de 1931",
-      caption: "Gran Vía, Madrid, 1931",
-    },
   },
   contact: {
-    heading: "Contacto",
-    place: "Madrid, España · CET",
-    languages: "Español · Inglés C1",
-    greeting: "Hola",
-    greetingLabel: "Escríbeme un correo",
+    kicker: "Contacto",
+    title: "Construyamos IA en la que se pueda confiar.",
+    body: "Busco mi próximo puesto junior de IA aplicada, ML o AI engineering. Si tu equipo entrega modelos de los que la gente depende, me encantaría hablar.",
+    copy: "Copiar email",
+    copied: "¡Copiado!",
+    location: "Madrid, España",
+    languages: "Español · Inglés (C1)",
   },
-  footer: {
-    invitation: ["¿Un puesto", "en mente?"],
-    action: "Escríbeme",
-    rights: "© 2026 Enrique Travesí Ortega",
-    credits: "Imágenes",
-  },
+  footer: { line: "Diseñado y construido con Next.js.", rights: "© 2026 Enrique Travesí Ortega" },
   caseStudy: {
-    back: "Todos los proyectos",
+    back: "Volver a proyectos",
+    cta: "¿Te encaja? Hablemos",
     facts: [
       { label: "Contexto", value: "Trabajo de fin de grado, Universidad Complutense de Madrid" },
       { label: "Mi parte", value: "Capa de explicabilidad, primera capa de datos, integración del modelo" },

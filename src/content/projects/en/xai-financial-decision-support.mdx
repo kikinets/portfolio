@@ -1,14 +1,10 @@
 import ArchitectureDiagram from "@/components/ArchitectureDiagram";
-import ExplanationFragment from "@/components/ExplanationFragment";
-import CaseFigure from "@/components/CaseFigure";
 
 ## The problem
 
 A model that says "sell" is not much use to the person who has to decide. They need to know what pushed it there, and whether that reason makes sense. Our final degree project at the Complutense was a decision-support system for investors: an MLP classifier recommends buy, hold or sell, and every recommendation comes with its reasons.
 
 The team built the data, the model and the interface together. My part was the explanation layer, plus the first version of the data layer in Supabase and a share of the architecture and model integration.
-
-<CaseFigure portrait src="/images/thomas-edison-stock-ticker-nmah-jn2014-3625.jpg" width={1920} height={2375} alt="A brass stock ticker under a glass dome, its paper tape curling out, on a black base marked Gold and Stock Telegraph Co." caption="A stock ticker built to Edison's patent. Prices on paper tape, no reasons attached." />
 
 ## What I built
 
@@ -22,18 +18,6 @@ The team built the data, the model and the interface together. My part was the e
   }}
 />
 
-<ExplanationFragment
-  title="Recommendation: sell"
-  note="Illustrative example of the explanation view, with invented values. Each bar is one feature's push towards or away from the recommended action."
-  rows={[
-    { label: "20-day momentum", value: 0.18 },
-    { label: "RSI, 14 days", value: 0.12 },
-    { label: "Volatility, 10 days", value: -0.09 },
-    { label: "Volume against 30-day mean", value: -0.05 },
-    { label: "Sector index return", value: 0.04 },
-  ]}
-/>
-
 ## Three decisions that mattered
 
 **Background data from the right moment.** SHAP measures each feature against a reference sample of data. In a time series, a careless reference can include data from after the day being explained, which quietly lets the future into the explanation. The explainer builds its background only from data that was consistent in time with the prediction.
@@ -41,8 +25,6 @@ The team built the data, the model and the interface together. My part was the e
 **Build once, explain many times.** Building a SHAP explainer is the expensive part; asking it about one prediction is cheap. The explainer is cached, so explaining a new recommendation does not mean paying the set-up cost again.
 
 **Numbers a person can read.** Raw SHAP output is a matrix: one value per feature for each of the three classes. The layer turns it into a short ranked list of contributions towards the recommended action, named in terms of the original features, which is what the interface shows.
-
-<CaseFigure src="/images/bolsa-de-madrid.jpg" width={1920} height={1536} alt="The columned facade of the Madrid Stock Exchange behind autumn plane trees" caption="Bolsa de Madrid, Plaza de la Lealtad" />
 
 ## Result
 

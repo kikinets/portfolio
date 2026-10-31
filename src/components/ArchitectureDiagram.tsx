@@ -1,20 +1,25 @@
-// The thesis system, left to right (top to bottom on a phone). My part is the filled step.
+// The thesis system, left to right (top to bottom on a phone). My part is highlighted.
 type Props = { labels: { nodes: string[]; mine: string; caption: string } };
 
 const MINE = 3;
 
 export default function ArchitectureDiagram({ labels }: Props) {
   return (
-    <figure className="wide diagram" data-ui>
-      <ol className="diagram__steps">
+    <figure className="my-12">
+      <ol className="grid gap-3 sm:grid-cols-6">
         {labels.nodes.map((node, i) => (
-          <li key={node} className={i === MINE ? "diagram__step diagram__step--mine" : "diagram__step"}>
-            {i === MINE && <span className="diagram__mine small">{labels.mine}</span>}
+          <li
+            key={node}
+            className={`relative flex min-h-20 flex-col justify-end rounded-xl border p-3 text-sm font-medium ${
+              i === MINE ? "border-transparent bg-gradient-to-br from-cyan to-violet text-[#07090f]" : "border-line bg-surface"
+            }`}
+          >
+            {i === MINE && <span className="mb-auto font-mono text-[11px] uppercase opacity-80">{labels.mine}</span>}
             {node}
           </li>
         ))}
       </ol>
-      <figcaption className="small soft">{labels.caption}</figcaption>
+      <figcaption className="mt-3 text-sm text-muted">{labels.caption}</figcaption>
     </figure>
   );
 }
