@@ -89,7 +89,7 @@ const en: Content = {
       { value: "2020 – 2026", label: "Universidad Complutense de Madrid" },
       { value: "9.7/10", label: "Final degree project in machine learning" },
     ],
-    honoursLabel: "Matrícula de Honor",
+    honoursLabel: "Highest Honours",
     honoursNote: "The highest distinction for a course, awarded only to the top grade in the class.",
     honours: [
       { subject: "Fundamentals of Programming II", area: "Computer Engineering" },
@@ -220,7 +220,7 @@ const en: Content = {
         org: "Universidad Complutense de Madrid",
         points: [
           "Final degree project: an end-to-end ML system for financial decisions, graded 9.7/10",
-          "Matrícula de Honor in Fundamentals of Programming II, Computer Structure, and Asset Valuation and Investment Analysis",
+          "Highest Honours in Fundamentals of Programming II, Computer Structure, and Asset Valuation and Investment Analysis",
         ],
       },
       {
